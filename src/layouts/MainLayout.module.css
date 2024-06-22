@@ -1,0 +1,10 @@
+.mainLayDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    /*padding-top: 3vh;*/
+    width: 80vw;
+    background-color: white;
+    box-shadow: 0 0 24px rgba(0, 0, 0, .2);
+}

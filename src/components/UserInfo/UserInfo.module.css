@@ -1,0 +1,18 @@
+
+.UserInfoDov {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3vw;
+    height: 100%;
+
+    .userLogo {
+        background-color: #fff;
+        height: 3vh;
+        border-radius: 1.5vh;
+        margin-right: 0.5vw;
+    }
+    h5{
+        width: 2vw;
+    }
+}

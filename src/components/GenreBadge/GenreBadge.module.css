@@ -1,0 +1,27 @@
+.genreDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 0 0.5vw;
+    margin: 0.5vh 0;
+    height: 2.5vh;
+    background-color: lightyellow;
+    border: black 1px solid;
+    p{
+        color: black;
+        font-size: 2vh;
+    }
+}
+
+.genreDiv:hover{
+    background-color: royalblue;
+    border: white 1px solid;
+
+    transform: scale(105%);
+    transition: 0.5s;
+    box-shadow: 0 0 24px rgba(0, 0, 0, .2);
+    p{
+        color: white;
+    }
+}

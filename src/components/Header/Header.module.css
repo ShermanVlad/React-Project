@@ -1,0 +1,33 @@
+.headerDiv {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: lightblue;
+
+    .linkTag {
+        width: 7vw;
+        height: 3vh;
+        background-color: lightgray;
+        border: solid 1px black;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-decoration: none;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+        h3 {
+            color: white;
+            text-decoration: none;
+            /*width: 9vw;*/
+            text-align: center;
+        }
+    }
+
+    input {
+        height: 2.5vh;
+        width: 10vw;
+        border-radius: 10px;
+    }
+}
