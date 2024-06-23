@@ -31,9 +31,7 @@ const getAllMovies = createAsyncThunk(
     'moviesSlice/getAllMovies',
     async (page: number, thunkAPI) => {
         try {
-            const response = await moviesService.getMovies(page);
-            // thunkAPI.dispatch(moviesActions.changeLoadState(true));
-            return thunkAPI.fulfillWithValue(response);
+            return thunkAPI.fulfillWithValue(await moviesService.getMovies(page));
         } catch (e) {
             const error = e as AxiosError;
             return thunkAPI.rejectWithValue(error.response?.data)
@@ -45,8 +43,7 @@ const searchedMovies = createAsyncThunk(
     'moviesSlice/searchedMovies',
     async ({query,currentSearchPage}: { query: string, currentSearchPage:number}, thunkAPI) => {
         try {
-            const response = await moviesService.getSearchedMovies(query,currentSearchPage)
-            return thunkAPI.fulfillWithValue(response)
+            return thunkAPI.fulfillWithValue(await moviesService.getSearchedMovies(query,currentSearchPage))
         } catch (e) {
             const error = e as AxiosError;
             thunkAPI.rejectWithValue(error.response?.data)
@@ -58,8 +55,7 @@ const getAllGenres = createAsyncThunk(
     'moviesSlice/getAllGenres',
     async (_, thunkApi) => {
         try {
-            const responce = await genresService.getGenres();
-            return thunkApi.fulfillWithValue(responce?.data)
+            return thunkApi.fulfillWithValue(await genresService.getGenres())
         } catch (e) {
             const error = e as AxiosError;
             thunkApi.rejectWithValue(error.response?.data)
@@ -72,9 +68,6 @@ export const moviesSlice = createSlice({
     name: 'moviesSlice',
     initialState,
     reducers: {
-        changeCurrentPage: (state, actions: PayloadAction<number>) => {
-            state.currentPage = actions.payload
-        },
         changeSearchPage: (state, action:PayloadAction<number>) => {
             state.currentSearchPage = action.payload
         }
@@ -99,7 +92,6 @@ export const moviesSlice = createSlice({
             .addCase(searchedMovies.fulfilled, (state, action) => {
                 if (action.payload) {
                     const {results,page,total_pages} = action.payload
-
                     state.searchMovies=results
                     state.currentPage=page
                     state.total_pages=total_pages

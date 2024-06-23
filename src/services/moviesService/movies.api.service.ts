@@ -19,14 +19,14 @@ const moviesService = {
     },
     getSearchedMovies: async (query: string, page: number): Promise<IMoviePaginated | null> => {
         try {
-            const response = await axiosInstance.get<IMoviePaginated>(urls.getSearchedMovies, {
+            const {data} = await axiosInstance.get<IMoviePaginated>(urls.getSearchedMovies, {
                 params: {
                     query,
                     page
                 }
             })
 
-            return  response.data
+            return data
         } catch (e) {
             const error = e as AxiosError;
             if (error) {

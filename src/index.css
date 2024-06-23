@@ -1,28 +1,17 @@
-:root{
+:root {
   --main-background-color: lightblue;
   --page-background-color: white;
-  --switcher-background-color: blue
+  --switcher-background-color: blue;
+  --badge-hover-background-color: royalblue;
+  --overview-color: black
 }
 [data-theme="dark"] {
   --main-background-color: blue;
   --page-background-color: lightblue;
-  --switcher-background-color: lightblue
+  --switcher-background-color: lightblue;
+  --badge-hover-background-color: lightblue;
+  --overview-color: white
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 body {
   margin: 0;

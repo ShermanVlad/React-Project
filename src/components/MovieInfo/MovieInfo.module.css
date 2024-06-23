@@ -65,6 +65,9 @@
     flex-direction: column;
     justify-content: center;
     width: 90%;
+    p{
+        color: var(--overview-color);
+    }
 }
 
 .backdropDiv{
@@ -74,5 +77,6 @@
 }
 
 .genres{
-    color: blue;
+    color: coral;
+    font-weight: bold;
 }

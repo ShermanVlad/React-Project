@@ -23,8 +23,7 @@ const MovieListCard: FC<IProps> = ({movie}) => {
         dispatch(moviesActions.getAllGenres())
     }, []);
     const findMovieGenre = (id: number)=>{
-        const movieGanre = genres.find(genre=>genre.id===id)
-        return movieGanre
+        return genres.find(genre=>genre.id===id)
     }
 
     return (
@@ -33,7 +32,6 @@ const MovieListCard: FC<IProps> = ({movie}) => {
             <Link to={`/movieInfo/${id}`} className={styles.link} state={{...movie}}>
                 <div className={styles.genreBadgesDiv}>
                     {
-                        // genre_ids.map(id=> <Link to={`/movies/${id}`} style={{textDecoration: "none"}} key={id+1}><GenreBadge genre={findMovieGenre(id)} key={id}/></Link>)
                         genre_ids.map(id=><GenreBadge genre={findMovieGenre(id)} key={id}/>)
 
                     }

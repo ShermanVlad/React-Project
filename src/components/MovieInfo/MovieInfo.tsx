@@ -2,9 +2,9 @@ import React, {FC, useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../redux/store";
 import {useLocation} from "react-router";
 import styles from './MovieInfo.module.css'
-import {Link} from 'react-router-dom';
 import {moviesActions} from "../../redux/slices/moviesSlice";
 import StarsRating from "../StarsRating/StarsRating";
+import {IGenre} from "../../models/IGenre";
 
 const MovieInfo: FC = () => {
 
@@ -30,9 +30,9 @@ const MovieInfo: FC = () => {
         dispatch(moviesActions.getAllGenres())
     }, [])
 
-    const findMovieGenre = (id: number) => {
-        const movieGanre = genres.find(genre => genre.id === id)
-        return movieGanre
+    const findMovieGenre = (id: number):IGenre |null=> {
+        const genre = genres.find(genre => genre.id === id)
+        return genre ? genre : null
     }
 
     return (
@@ -51,8 +51,8 @@ const MovieInfo: FC = () => {
                         genre_ids?.map((id: number) => {
                             const genre = findMovieGenre(id);
                             return genre ? (
-                                <div className={styles.genres}>
-                                    <div key={id} style={{marginRight: "0.3vw"}}>{genre.name}</div>
+                                <div className={styles.genres} key={id}>
+                                    <div key={id+1} style={{marginRight: "0.3vw"}}>{genre.name}</div>
                                 </div>
                             ) : null
                         })
@@ -65,7 +65,6 @@ const MovieInfo: FC = () => {
 
             <div className={styles.overviewAndImg}>
                 <div className={styles.overviewDiv}>
-                    {/*<h3>Film `{title}` is about:</h3>*/}
                     <p>{overview}</p>
                 </div>
                 <div className={styles.backdropDiv}>

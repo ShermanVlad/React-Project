@@ -15,7 +15,7 @@
 }
 
 .genreDiv:hover{
-    background-color: royalblue;
+    background-color: var(--badge-hover-background-color);
     border: white 1px solid;
 
     transform: scale(105%);
