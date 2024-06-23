@@ -1,0 +1,16 @@
+.ThemeSwitchDiv{
+    display: flex;
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 7vw;
+        height: 2vh;
+        background-color: var(--switcher-background-color);
+        border-radius: 1vw;
+        border: none;
+        p{
+            color: white;
+        }
+    }
+}

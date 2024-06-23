@@ -51,9 +51,9 @@ const MovieInfo: FC = () => {
                         genre_ids?.map((id: number) => {
                             const genre = findMovieGenre(id);
                             return genre ? (
-                                <Link key={id} to={`/movies/${id}`} className={styles.link}>
+                                <div className={styles.genres}>
                                     <div key={id} style={{marginRight: "0.3vw"}}>{genre.name}</div>
-                                </Link>
+                                </div>
                             ) : null
                         })
                     }</div>

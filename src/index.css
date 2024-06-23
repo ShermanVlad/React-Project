@@ -1,3 +1,29 @@
+:root{
+  --main-background-color: lightblue;
+  --page-background-color: white;
+  --switcher-background-color: blue
+}
+[data-theme="dark"] {
+  --main-background-color: blue;
+  --page-background-color: lightblue;
+  --switcher-background-color: lightblue
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -14,4 +40,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
+}
+[data-theme='dark']{
+--headder-color: darkblue
 }

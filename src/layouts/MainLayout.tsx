@@ -5,9 +5,9 @@ import styles from './MainLayout.module.css'
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className={styles.layout}>
             <Header/>
-            <div  className={styles.mainLayDiv}>
+            <div className={styles.mainLayDiv}>
                 <Outlet/>
             </div>
         </div>

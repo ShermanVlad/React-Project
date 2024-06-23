@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: lightblue;
+    background-color: var(--main-background-color);
 
     .linkTag {
         width: 7vw;

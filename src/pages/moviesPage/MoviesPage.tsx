@@ -22,6 +22,10 @@ const MoviesPage = () => {
     useEffect(() => {
         dispatch(moviesActions.getAllMovies(currentSearchPage || 1))
     }, [currentSearchPage]);
+
+
+
+
     return (
         <div className={styles.MoviesPageDiv}>
             <div className={styles.paginDiv}>

@@ -13,6 +13,7 @@ type MoviesSliceType = {
     currentSearchPage: number;
     total_pages: null | number;
     isLoaded: boolean;
+    darkMode: boolean
 }
 
 const initialState: MoviesSliceType = {
@@ -22,7 +23,8 @@ const initialState: MoviesSliceType = {
     currentPage: 1,
     currentSearchPage: 1,
     total_pages: null,
-    isLoaded: false
+    isLoaded: false,
+    darkMode: false
 }
 
 const getAllMovies = createAsyncThunk(

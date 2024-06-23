@@ -32,7 +32,7 @@ const SearchedMoviesPage = () => {
         <div  className={styles.MoviesPageDiv}>
             <div className={styles.paginDiv}>
                 <Pagination page={currentSearchPage}
-                            count={total_pages ? total_pages : 50}
+                            count={total_pages || 1}
                             onChange={(_, page: number) => reloadPage(page)}
                             shape={"rounded"}
                             color={"primary"}
@@ -40,12 +40,12 @@ const SearchedMoviesPage = () => {
             </div>
             <div className={styles.searchedMoviesDiv}>
                 {
-                    searchMovies.length > 0 ? searchMovies.map(movie => <MovieListCard key={movie.id} movie={movie}/>) : <div>loading ...</div>
+                    searchMovies.length > 0 ? searchMovies.map(movie => <MovieListCard key={movie.id} movie={movie}/>) : <div className={styles.notFound}>`{query}` not found ...</div>
                 }
             </div>
             <div className={styles.paginDiv}>
                 <Pagination page={currentSearchPage}
-                            count={total_pages ? total_pages : 50}
+                            count={total_pages || 1}
                             onChange={(_, page: number) => reloadPage(page)}
                             shape={"rounded"}
                             color={"primary"}

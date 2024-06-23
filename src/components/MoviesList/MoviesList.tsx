@@ -10,7 +10,7 @@ const MoviesList: FC = () => {
     return (
         <div className={styles.mainDiv}>
             {
-                isLoaded? movies?.map(movie => <MovieListCard key={movie.id} movie={movie}/>) : <div>loading ...</div>
+                isLoaded? movies?.map(movie => <MovieListCard key={movie.id} movie={movie}/>) : <div className={styles.loading}>loading ...</div>
             }
         </div>
     );

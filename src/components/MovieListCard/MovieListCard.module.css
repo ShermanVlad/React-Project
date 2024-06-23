@@ -42,7 +42,7 @@
 }
 
 .movieDiv:hover {
-    background-color: lightblue;
+    background-color: var(--main-background-color);
     transform: scale(102%);
     transition: 1s;
     box-shadow: 0 0 24px rgba(0, 0, 0, .2);
